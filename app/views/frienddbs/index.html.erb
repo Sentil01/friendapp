@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+
+<h1>Friends</h1>
+<table class="table table-success table-striped ">
+  <thead class="table table-dark table-striped">
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Email</th>
+  <th>Twitter</th>
+  <th>User Id</th>
+  <th colspan="3"></th>
+  </thead>
+
+ <tbody>
+
+
+     <% @frienddbs.each do |frienddb| %>
+   <tr>
+       <td><%= frienddb.first_name %></td>
+       <td><%= frienddb.last_name %></td>
+       <td><%= frienddb.email%></td>
+       <td><%= frienddb.twitter%></td>
+       <td><%= frienddb.user_id %></td>
+
+
+       <td><%= link_to "Show", frienddb %></td>
+       <td><%= link_to "Edit", frienddb%></td>
+     <% end %>
+   </tr>
+
+
+ </tbody>
+</table>
+
+
+<%= link_to "New friend", new_frienddb_path,class:"btn btn-outline-dark" %>
